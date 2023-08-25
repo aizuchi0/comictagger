@@ -37,7 +37,7 @@ class VersionChecker:
             release = requests.get(
                 url,
                 params=params,
-                headers={"user-agent": "comictagger/" + ctversion.version},
+                headers={"user-agent": "dani/" + ctversion.version},
             ).json()
         except Exception:
             return ("", "")

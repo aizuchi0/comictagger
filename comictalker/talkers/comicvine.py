@@ -225,7 +225,7 @@ class ComicVineTalker(ComicTalker):
 
             cv_response: CVResult = requests.get(
                 test_url,
-                headers={"user-agent": "comictagger/" + self.version},
+                headers={"user-agent": "dani/" + self.version},
                 params={"api_key": key or self.default_api_key, "format": "json", "field_list": "name"},
             ).json()
 
@@ -465,7 +465,7 @@ class ComicVineTalker(ComicTalker):
         # any other error, just bail
         for tries in range(3):
             try:
-                resp = requests.get(url, params=params, headers={"user-agent": "comictagger/" + self.version})
+                resp = requests.get(url, params=params, headers={"user-agent": "dani/" + self.version})
                 if resp.status_code == 200:
                     return resp.json()
                 if resp.status_code == 500:

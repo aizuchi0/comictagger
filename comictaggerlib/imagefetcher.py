@@ -82,7 +82,7 @@ class ImageFetcher:
         if blocking or not qt_available:
             if not image_data:
                 try:
-                    image_data = requests.get(url, headers={"user-agent": "comictagger/" + ctversion.version}).content
+                    image_data = requests.get(url, headers={"user-agent": "dani/" + ctversion.version}).content
                     # save the image to the cache
                     self.add_image_to_cache(self.fetched_url, image_data)
                 except Exception as e:
